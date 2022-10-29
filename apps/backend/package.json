@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "volta": {
-    "node": "^18.12.0"
+    "node": "18.12.0"
   },
   "scripts": {
     "build": "rimraf dist && swc ./src -d dist",
@@ -22,6 +22,7 @@
     "apollo-server-core": "^3.10.0",
     "apollo-server-express": "^3.10.0",
     "bullmq": "^1.86.10",
+    "cors": "^2.8.5",
     "express": "^4.18.1",
     "graphql": "^16.5.0",
     "graphql-iso-date": "^3.6.1",
