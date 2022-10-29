@@ -4,7 +4,7 @@ services:
     name: fh-prod-backend1
     repo: https://github.com/mrwade/form-hub.git
     buildFilter:
-      path:
+      paths:
         - apps/backend/**
     buildCommand: yarn && yarn build --filter=backend
     startCommand: cd app/backend; yarn start
@@ -23,7 +23,7 @@ services:
     name: fh-prod-frontend1
     repo: https://github.com/mrwade/form-hub.git
     buildFilter:
-      path:
+      paths:
         - apps/frontend/**
     buildCommand: yarn && yarn build --filter=frontend
     staticPublishPath: ./apps/frontend/build
