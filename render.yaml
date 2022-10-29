@@ -16,6 +16,7 @@ services:
       - key: REDIS_URL
         fromService:
           name: fh-prod-redis1
+          type: redis
           property: connectionString
 
   - type: web
@@ -40,6 +41,7 @@ services:
 
   - type: redis
     name: fh-prod-redis1
+    ipAllowList: []
 
 databases:
   - name: fh-prod-db1
