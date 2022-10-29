@@ -1,0 +1,10 @@
+{
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true
+  },
+  "triggerTaskOnSave.tasks": {
+    "restart web": ["apps/backend/**/*"]
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
