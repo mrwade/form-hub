@@ -13,7 +13,7 @@
     "build": "rimraf dist && swc ./src -d dist",
     "build:prisma": "prisma generate && yarn rebuild:be",
     "db:console": "docker compose exec postgres psql -h localhost -U postgres -d webapp_dev",
-    "db:migrate": "knex migrate:latest",
+    "db:migrate": "npx knex migrate:latest",
     "docker:db:migrate": "docker compose run backend yarn db:migrate",
     "rebuild:be": "docker compose build backend && docker compose rm --stop backend && docker compose up -d backend",
     "start": "node dist/index.js",
@@ -35,6 +35,7 @@
     "morgan": "^1.10.0",
     "nanoid": "^3.0.0",
     "pg": "^8.7.1",
+    "ts-node": "^10.4.0",
     "typescript": "^4.5.4"
   },
   "devDependencies": {
@@ -50,7 +51,6 @@
     "@typescript-eslint/parser": "^5.9.0",
     "eslint": "^8.6.0",
     "prisma": "^4.1.1",
-    "rimraf": "^3.0.2",
-    "ts-node": "^10.4.0"
+    "rimraf": "^3.0.2"
   }
 }
