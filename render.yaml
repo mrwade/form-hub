@@ -7,7 +7,7 @@ services:
       paths:
         - apps/backend/**
     buildCommand: yarn && yarn build --filter=backend
-    startCommand: cd app/backend; yarn start
+    startCommand: cd apps/backend; yarn start
     envVars:
       - key: DATABASE_URL
         fromDatabase:
