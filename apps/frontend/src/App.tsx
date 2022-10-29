@@ -2,8 +2,12 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import "./App.css";
 import Dashboard from "./screens/Dashboard";
 
+const URL = process.env.GRAPHQL_HOST
+  ? `https://${process.env.GRAPHQL_HOST}/graphql`
+  : "http://localhost:8000/graphql";
+
 const client = new ApolloClient({
-  uri: "http://localhost:8000/graphql",
+  uri: URL,
   cache: new InMemoryCache(),
 });
 
