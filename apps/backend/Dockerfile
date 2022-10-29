@@ -1,5 +1,5 @@
-FROM node:alpine AS builder
-RUN apk update
+FROM node:lts AS builder
+# RUN apk update
 # Set working directory
 WORKDIR /app
 RUN yarn global add turbo
@@ -7,7 +7,7 @@ COPY . .
 RUN turbo prune --scope=backend --docker
 
 # Add lockfile and package.json's of isolated subworkspace
-FROM node AS installer
+FROM node:lts AS installer
 # RUN apk update
 WORKDIR /app
 
@@ -22,7 +22,7 @@ COPY --from=builder /app/out/full/ .
 COPY turbo.json turbo.json
 RUN yarn turbo run build --filter=backend...
 
-FROM node AS runner
+FROM node:lts AS runner
 WORKDIR /app
 
 # # Don't run production as root
