@@ -3,6 +3,7 @@ import {
   ApolloServerPluginLandingPageLocalDefault,
 } from 'apollo-server-core';
 import { ApolloServer } from 'apollo-server-express';
+import cors from 'cors';
 import express from 'express';
 import http from 'http';
 import morgan from 'morgan';
@@ -12,6 +13,7 @@ import db from './modules/db';
 
 const app = express();
 app.use(morgan('dev'));
+app.use(cors());
 
 app.get('/', async (req, res) => {
   const submissions = await db.submission.findMany();
