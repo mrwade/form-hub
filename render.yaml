@@ -33,7 +33,7 @@ services:
         source: /*
         destination: /index.html
     envVars:
-      - key: GRAPHQL_HOST
+      - key: REACT_APP_GRAPHQL_HOST
         fromService:
           name: fh-prod-backend1
           type: web
